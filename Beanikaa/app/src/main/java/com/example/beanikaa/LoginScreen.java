@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,11 +16,24 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.beanikaa.Service.SendMail;
+import com.example.beanikaa.common.Account;
+import com.example.beanikaa.data.Pojo.User;
+
 import com.google.android.material.textfield.TextInputEditText;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class LoginScreen extends AppCompatActivity {
-
+    private static final String TAG = LoginScreen.class.getName();
     TextInputEditText Phone_field, Pass_field;
     Button loginbtn;
     ProgressBar progressBar;
@@ -35,6 +49,7 @@ public class LoginScreen extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
 
         loginbtn = findViewById(R.id.LoginBtn);
         progressBar = findViewById(R.id.progress);
@@ -90,10 +105,31 @@ public class LoginScreen extends AppCompatActivity {
                         data[0] = phonenumber;
                         data[1] = password;
 
+<<<<<<< HEAD
                         PutData putData = new PutData("http://192.168.188.243//Beanikaa/login.php", "POST", field, data);
+=======
+                        PutData putData = new PutData("http://192.168.0.102/android/login", "POST", field, data);
+>>>>>>> 021603ec38cd8d1f52762da787e0b082906bd764
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = putData.getResult();
+                                if(result!= null){
+                                    progressBar.setVisibility(View.GONE);
+                                    SendMail sendMail = new SendMail(LoginScreen.this,"huyen.dtt19010061@st.phenikaa-uni.edu.vn","hi","hello");
+                                    sendMail.send();
+
+                                    //ObjectMapper objectMapper = new ObjectMapper();
+                                //    Account.account = objectMapper.readValue(result,User.class);
+                                   //Account.account= new Gson().fromJson(result,User.class);
+                                   // String s ="{\"id\":\"1\",\"password\":\"1234\",\"email\":\"huyen\",\phoneNumber"\":\"01234567\",\"created_date\":\"2022-03-04 16:25:49\",\"created_by\":null,\"modified_date\":\"2022-03-04 16:25:49\",\"modified_by\":null,\"idRole\":\"0\"}";
+                                   // Account.account= new Gson().fromJson(s,User.class);
+                                    //System.out.println(Account.account);
+
+                                    Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show();
+                                }else{
+                                    Toast.makeText(getApplicationContext(),"no thing",Toast.LENGTH_SHORT).show();
+                                }
+                               /* String result = putData.getResult();
                                 if(result.equals("Dang nhap thanh cong!")){
                                     progressBar.setVisibility(View.GONE);
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -102,7 +138,8 @@ public class LoginScreen extends AppCompatActivity {
                                 }
                                 else {
                                     Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                }
+                                }*/
+                               // checkLogin("http://192.168.0.102/android/login");
                             }
                         }
                     }
@@ -114,5 +151,26 @@ public class LoginScreen extends AppCompatActivity {
             }
 
         });
+    }
+    public void checkLogin(String url){
+
+        RequestQueue mRequestQueue= Volley.newRequestQueue(this);;
+        StringRequest mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Toast.makeText(getApplicationContext(),"Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Log.i(TAG,"Error :" + error.toString());
+            }
+        });
+
+        mRequestQueue.add(mStringRequest);
     }
 }
