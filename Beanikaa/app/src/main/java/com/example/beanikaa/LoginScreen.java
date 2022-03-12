@@ -90,7 +90,7 @@ public class LoginScreen extends AppCompatActivity {
                         data[0] = phonenumber;
                         data[1] = password;
 
-                        PutData putData = new PutData("http://192.168.1.9/Beanikaa/login.php", "POST", field, data);
+                        PutData putData = new PutData("http://192.168.188.243//Beanikaa/login.php", "POST", field, data);
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = putData.getResult();
