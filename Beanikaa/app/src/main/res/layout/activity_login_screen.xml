@@ -13,10 +13,10 @@
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:scaleType="fitCenter"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/logo_full" />
 
 
@@ -44,7 +44,6 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/border"
                 android:drawableEnd="@drawable/ic_phone"
-                android:inputType="phone"
                 android:drawableRight="@drawable/ic_phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -133,7 +132,17 @@
             android:text="You forgot the password?"
             android:fontFamily="@font/poppinsmedium"
             android:textColor="@color/graytxt"
-            android:textSize="18dp"/>
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/toLoginActBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Already have an account? Log in!"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/elecBlue"
+            android:textSize="15dp"
+            android:clickable="true"/>
 
     </LinearLayout>
 </RelativeLayout>

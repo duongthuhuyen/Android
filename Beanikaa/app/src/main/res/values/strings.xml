@@ -2,4 +2,6 @@
     <string name="app_name">Beanikaa</string>
     <string name="username">Tên đăng nhập</string>
     <string name="password">Password</string>
+    <string name="facebook_app_id">302276525306807</string>
+    <string name="fb_login_protocol_scheme">fb302276525306807</string>
 </resources>
