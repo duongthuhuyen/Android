@@ -2,7 +2,10 @@ package com.example.beanikaa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,6 +16,8 @@ public class SignUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
     }
@@ -21,7 +26,6 @@ public class SignUp extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         email = (EditText)findViewById(R.id.email);
         confirmpassword = (EditText)findViewById(R.id.confirmpassword);
-        exitbutton = (Button)findViewById(R.id.exitbutton);
         registerbutton = (Button)findViewById(R.id.registertbutton);
     }
 }
