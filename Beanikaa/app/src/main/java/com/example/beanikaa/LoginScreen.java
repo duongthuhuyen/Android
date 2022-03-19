@@ -47,7 +47,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
     Button loginbtn;
     ImageButton fbLoginBtn, ggLoginBtn;
     ProgressBar progressBar;
-    TextView forgotpass, loginActBtn;
+    TextView forgotpass, SignUpActBtn;
     private GoogleApiClient googleApiClient;
     private static final int SIGN_IN = 1;
 
@@ -67,14 +67,14 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
         progressBar = findViewById(R.id.progress);
         Phone_field = findViewById(R.id.phone_field);
         Pass_field = findViewById(R.id.password_field);
-        loginActBtn = findViewById(R.id.toLoginActBtn);
+        SignUpActBtn = findViewById(R.id.toLoginActBtn);
 
         //Facebook & Gg buttons
         fbLoginBtn = findViewById(R.id.facebookbtn);
         ggLoginBtn = findViewById(R.id.googlebtn);
 
 
-        Phone_field.setHint("Your phone number");
+        Phone_field.setHint("Your email");
         Pass_field.setHint("Password");
 
         Phone_field.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -82,7 +82,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                 if (hasFocus)
                     Phone_field.setHint("");
                 else
-                    Phone_field.setHint("Your phone number");
+                    Phone_field.setHint("Your email");
             }
         });
         Pass_field.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -147,7 +147,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                                     Toast.makeText(getApplicationContext(),"nothing",Toast.LENGTH_SHORT).show();
                                 }
 
-                                if(result.equals("Dang nhap thanh cong!")){
+                                if(result.equals("Login Success!")){
                                     progressBar.setVisibility(View.GONE);
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
@@ -191,8 +191,8 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
             }
         });
 
-        //Already had account, login
-        loginActBtn.setOnClickListener(new View.OnClickListener() {
+        //To sign up screen
+        SignUpActBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignUp.class);

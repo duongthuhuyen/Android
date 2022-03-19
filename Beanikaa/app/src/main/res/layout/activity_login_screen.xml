@@ -43,8 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/border"
-                android:drawableEnd="@drawable/ic_phone"
-                android:drawableRight="@drawable/ic_phone" />
+                android:drawableEnd="@drawable/ic_baseline_email_24"
+                android:drawableRight="@drawable/ic_baseline_email_24" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

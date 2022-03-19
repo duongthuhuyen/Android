@@ -31,7 +31,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Your username"
-        android:id="@+id/pnameField"
+        android:id="@+id/nameField"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_baseline_account_circle_24"
         android:drawableRight="@drawable/ic_baseline_account_circle_24" />
@@ -48,7 +48,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Email"
-        android:id="@+id/email"
+        android:id="@+id/emailField"
         android:layout_marginTop="5dp"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_baseline_email_24"
@@ -58,7 +58,7 @@
         android:layout_height="50dp"
         android:hint="Password"
         android:inputType="textVisiblePassword"
-        android:id="@+id/password"
+        android:id="@+id/passwordField"
         android:layout_marginTop="5dp"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_pass"
@@ -67,7 +67,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Confirm Password"
-        android:id="@+id/confirmpassword"
+        android:id="@+id/confirmpasswordField"
         android:layout_marginTop="5dp"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_pass"
@@ -94,19 +94,10 @@
             android:textColor="@color/elecBlue"
             android:textSize="14dp"/>
     </LinearLayout>
-    <TextView
-        android:id="@+id/toLoginActBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Already have an account? Log in!"
-        android:fontFamily="@font/poppinsmedium"
-        android:textColor="@color/elecBlue"
-        android:textSize="15dp"
-        android:clickable="true"/>
+
     //button dang ky
     <Button
-        android:id="@+id/registertbutton"
+        android:id="@+id/registertbtn"
         android:layout_width="150dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
@@ -120,5 +111,16 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@drawable/borderbutton">
     </Button>
+
+    <TextView
+        android:id="@+id/toLoginActBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Already have an account? Log in!"
+        android:fontFamily="@font/poppinsmedium"
+        android:textColor="@color/elecBlue"
+        android:textSize="15dp"
+        android:clickable="true"/>
 
 </LinearLayout>
