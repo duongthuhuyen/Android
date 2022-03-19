@@ -123,7 +123,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                         data[1] = password;
 
 //<<<<<<< HEAD
-                        PutData putData = new PutData("http://192.168.188.243//Beanikaa/login.php", "POST", field, data);
+                        PutData putData = new PutData("http://192.168.0.107//Beanikaa/login.php", "POST", field, data);
 //=======
 //                        PutData putData = new PutData("http://192.168.0.102/android/login", "POST", field, data);
 //>>>>>>> 021603ec38cd8d1f52762da787e0b082906bd764
@@ -144,9 +144,9 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
 
                                     Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show();
                                 }else{
-                                    Toast.makeText(getApplicationContext(),"no thing",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"nothing",Toast.LENGTH_SHORT).show();
                                 }
-                               /* String result = putData.getResult();
+
                                 if(result.equals("Dang nhap thanh cong!")){
                                     progressBar.setVisibility(View.GONE);
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -155,7 +155,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                                 }
                                 else {
                                     Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                }*/
+                                }
                                // checkLogin("http://192.168.0.102/android/login");
                             }
                         }

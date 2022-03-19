@@ -18,40 +18,29 @@
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:paddingTop="40dp"
-        android:paddingBottom="20dp"/>
+        android:paddingTop="40dp" />
 
     <ImageView
-        android:layout_width="190dp"
-        android:layout_height="190dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_gravity="center"
         android:src="@drawable/phoenix_logo"
         />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:gravity="center"
-        android:text="ĐĂNG KÝ NGAY"
-        android:textColor="@color/black"
-        android:fontFamily="@font/bahnschrift"
-        android:textSize="25dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:gravity="center"
-        android:text=" NHẬN COUPON HẤP DẪN!"
-        android:textColor="@color/black"
-        android:fontFamily="@font/bahnschrift"
-        android:textSize="25dp"
-        android:textStyle="bold" />
     <EditText
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:hint="Your username"
+        android:id="@+id/pnameField"
+        android:background="@drawable/border"
+        android:drawableEnd="@drawable/ic_baseline_account_circle_24"
+        android:drawableRight="@drawable/ic_baseline_account_circle_24" />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
         android:hint="Your phone number"
-        android:id="@+id/phone"
+        android:id="@+id/phoneField"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_phone"
         android:drawableRight="@drawable/ic_phone" />
@@ -60,7 +49,7 @@
         android:layout_height="50dp"
         android:hint="Email"
         android:id="@+id/email"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_baseline_email_24"
         android:drawableRight="@drawable/ic_baseline_email_24" />
@@ -70,7 +59,7 @@
         android:hint="Password"
         android:inputType="textVisiblePassword"
         android:id="@+id/password"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_pass"
         android:drawableRight="@drawable/ic_pass" />
@@ -79,7 +68,7 @@
         android:layout_height="50dp"
         android:hint="Confirm Password"
         android:id="@+id/confirmpassword"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/border"
         android:drawableEnd="@drawable/ic_pass"
         android:drawableRight="@drawable/ic_pass" />
@@ -90,7 +79,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="By signing up you agree to our "
             android:fontFamily="@font/poppinsmedium"
             android:textColor="@color/graytxt"
@@ -98,13 +87,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="Terms and Conditions"
             android:fontFamily="@font/poppinsmedium"
             android:textStyle="bold"
             android:textColor="@color/elecBlue"
             android:textSize="14dp"/>
     </LinearLayout>
+    <TextView
+        android:id="@+id/toLoginActBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Already have an account? Log in!"
+        android:fontFamily="@font/poppinsmedium"
+        android:textColor="@color/elecBlue"
+        android:textSize="15dp"
+        android:clickable="true"/>
     //button dang ky
     <Button
         android:id="@+id/registertbutton"
@@ -119,7 +118,7 @@
         android:textColor="@color/white"
 
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@drawable/borderbutton2">
+        android:background="@drawable/borderbutton">
     </Button>
 
 </LinearLayout>
