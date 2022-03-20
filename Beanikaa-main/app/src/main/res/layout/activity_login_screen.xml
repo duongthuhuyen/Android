@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreen"
+    android:background="@drawable/login_background"
+    >
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_full" />
+
+
+
+    //Thong tin dang nhap
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="20dp">
+
+        //Sdt
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border"
+                android:drawableEnd="@drawable/ic_baseline_email_24"
+                android:drawableRight="@drawable/ic_baseline_email_24" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        //Mk
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:background="@drawable/border"
+                android:drawableEnd="@drawable/ic_pass"
+                android:drawableRight="@drawable/ic_pass" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
+
+        //button dang nhap
+        <Button
+            android:id="@+id/LoginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+
+
+            android:text="LOGIN"
+            android:fontFamily="@font/bahnschrift"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@drawable/borderbutton">
+        </Button>
+        
+        //Đăng nhập bằng gg or fb
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="or login with"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/graytxt"
+            android:textSize="18dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/facebookbtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/facebooklogo"
+                android:background="@color/white"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/googlebtn"
+                android:layout_width="47dp"
+                android:layout_height="47dp"
+                android:src="@drawable/googlelogo"
+                android:background="@color/white"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        //Quên mật khẩu
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="You forgot the password?"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/graytxt"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/toLoginActBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Don't have an account yet? Sign up!"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/elecBlue"
+            android:textSize="15dp"
+            android:clickable="true"/>
+
+    </LinearLayout>
+</RelativeLayout>
