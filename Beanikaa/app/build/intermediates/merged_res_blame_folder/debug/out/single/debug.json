@@ -1,0 +1,282 @@
+[
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_phone.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_phone.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable_ga.jpg.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable\\ga.jpg"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_pass.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_pass.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_appicon.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-hdpi\\appicon.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable_borderbutton.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable\\borderbutton.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_google_login.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_google_login.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_phone.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_phone.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\font_poppinsmedium.ttf.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\font\\poppinsmedium.ttf"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_baseline_email_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_email_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_phone.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable_borderbutton2.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable\\borderbutton2.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_baseline_account_circle_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_account_circle_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_phone.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_phone.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_baseline_email_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_email_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_facebooklogo.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable-v24\\facebooklogo.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_signup_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable-v24\\signup_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_baseline_account_circle_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_account_circle_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_baseline_email_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_email_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_facebook_login.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_facebook_login.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\font_bahnschrift.TTF.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\font\\bahnschrift.TTF"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_login_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable-v24\\login_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_baseline_email_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_email_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_baseline_account_circle_24.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_account_circle_24.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_pass.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_pass.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_baseline_email_24.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_email_24.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_baseline_email_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_email_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_phone.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_phone.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_phoenix_logo.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable-v24\\phoenix_logo.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_pass.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_pass.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_sloganlogo2.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable-v24\\sloganlogo2.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_pass.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_pass.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_baseline_email_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_email_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_googlelogo.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable-v24\\googlelogo.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_sign_up.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_pass.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_pass.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_phone.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_phone.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_baseline_account_circle_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_account_circle_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\font_poppinsbold.ttf.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\font\\poppinsbold.ttf"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_baseline_account_circle_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_account_circle_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_pass.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_pass.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_baseline_account_circle_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_account_circle_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_baseline_account_circle_24.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_account_circle_24.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_phone.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_phone.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable_border.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable\\border.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_logo_full.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable-v24\\logo_full.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_pass.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_pass.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login_screen.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_login_screen.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_google_account_profile.xml.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_google_account_profile.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    }
+]

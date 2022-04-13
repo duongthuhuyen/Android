@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_google_account_profile.xml",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_google_account_profile.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login_screen.xml",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_login_screen.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_facebook_login.xml",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_facebook_login.xml"
+    },
+    {
+        "merged": "D:\\Android\\Beanikaa\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_google_login.xml",
+        "source": "D:\\Android\\Beanikaa\\app\\src\\main\\res\\layout\\activity_google_login.xml"
+    }
+]
