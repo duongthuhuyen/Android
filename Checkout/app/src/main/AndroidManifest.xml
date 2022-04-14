@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Checkout">
         <activity
-            android:name=".MainActivity"
+            android:name=".Food_checkout"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
