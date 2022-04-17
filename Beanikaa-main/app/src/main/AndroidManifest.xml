@@ -24,7 +24,8 @@
             android:exported="false" />
         <activity
             android:name=".facebook_login"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".LoginScreen"
             android:exported="true" >
@@ -42,8 +43,17 @@
 
         </activity>
 
-        <activity android:name=".Main_second"
-            android:exported="true" />
+        <activity
+            android:name=".Main_second"
+            android:exported="true" >
+
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+
+        </activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

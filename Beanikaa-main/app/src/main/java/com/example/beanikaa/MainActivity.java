@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         clickdemo = findViewById(R.id.demoClick);
         clickdemo.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -132,6 +132,7 @@
     </HorizontalScrollView>
 
     <TextView
+
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:text="Mì xào hải sản cay"
@@ -194,11 +195,13 @@
             />
 
         <ImageView
+            android:id="@+id/heartImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/heart"
             android:layout_gravity="center"
             android:layout_marginLeft="45dp"
+            android:tag="heart"
             />
 
         <ImageView
@@ -211,6 +214,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/billTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="55.000đ"
@@ -225,6 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
         <Button
+            android:id="@+id/truBtn"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="-"
@@ -235,6 +240,7 @@
             />
 
         <TextView
+            android:id="@+id/amountTv"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:text="1"
@@ -246,6 +252,7 @@
             />
 
         <Button
+            android:id="@+id/congBtn"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="+"
@@ -256,6 +263,7 @@
             />
 
         <Button
+            android:id="@+id/cartBtn"
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:text="Add to cart"

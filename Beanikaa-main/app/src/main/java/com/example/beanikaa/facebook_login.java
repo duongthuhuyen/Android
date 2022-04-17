@@ -3,8 +3,14 @@ package com.example.beanikaa;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -23,6 +29,8 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 public class facebook_login extends AppCompatActivity {
@@ -36,9 +44,9 @@ public class facebook_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-//        AppEventsLogger.activateApp(this);
+////        AppEventsLogger.activateApp(this);
         setContentView(R.layout.activity_facebook_login);
-
+//
         loginButton = (LoginButton) findViewById(R.id.login_button);
         Tvname = (TextView) findViewById(R.id.name);
         Tvemail = (TextView) findViewById(R.id.email);
@@ -52,6 +60,8 @@ public class facebook_login extends AppCompatActivity {
 
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email"));
         setLogin_Button();
+
+
     }
 
     private void setLogin_Button() {
@@ -59,11 +69,13 @@ public class facebook_login extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
 
-                loginButton.setVisibility(View.INVISIBLE);
-                Tvname.setVisibility(View.VISIBLE);
-                Tvemail.setVisibility(View.VISIBLE);
-                Tvfirst_name.setVisibility(View.VISIBLE);
-                result();
+//                loginButton.setVisibility(View.INVISIBLE);
+//                Tvname.setVisibility(View.VISIBLE);
+//                Tvemail.setVisibility(View.VISIBLE);
+//                Tvfirst_name.setVisibility(View.VISIBLE);
+//                result();
+                Intent intent = new Intent(facebook_login.this, Main_second.class);
+                startActivity(intent);
             }
 
             @Override
