@@ -14,4 +14,9 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:fitsSystemWindows">true</item>
     </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#8f8f8f</item>
+        <item name="colorControlActivated">#ffd700</item>
+    </style>
 </resources>

@@ -1,0 +1,25 @@
+com/example/beanikaa/databinding/ActivityLoginScreenBinding.java
+ com.example.beanikaa.databinding.ActivityLoginScreenBinding
+com/example/beanikaa/data/Result.java
+ com.example.beanikaa.data.Result
+ com.example.beanikaa.data.Result$1
+ com.example.beanikaa.data.Result$Error
+ com.example.beanikaa.data.Result$Success
+com/example/beanikaa/BuildConfig.java
+ com.example.beanikaa.BuildConfig
+com/example/beanikaa/data/LoginDataSource.java
+ com.example.beanikaa.data.LoginDataSource
+com/example/beanikaa/MainActivity.java
+ com.example.beanikaa.MainActivity
+com/example/beanikaa/data/LoginRepository.java
+ com.example.beanikaa.data.LoginRepository
+com/example/beanikaa/databinding/ActivityMainBinding.java
+ com.example.beanikaa.databinding.ActivityMainBinding
+com/example/beanikaa/data/model/LoggedInUser.java
+ com.example.beanikaa.data.model.LoggedInUser
+com/example/beanikaa/LoginScreen.java
+ com.example.beanikaa.LoginScreen
+ com.example.beanikaa.LoginScreen$1
+ com.example.beanikaa.LoginScreen$2
+ com.example.beanikaa.LoginScreen$3
+ com.example.beanikaa.LoginScreen$3$1
