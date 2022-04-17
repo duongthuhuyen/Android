@@ -2,6 +2,7 @@ package com.example.beanikaa;
 
 import com.example.beanikaa.result.Second_screen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,7 @@ public class Main_second extends AppCompatActivity {
 
     private Button congBtn, truBtn, cartBtn;
     private TextView amountTv, billTv;
-    private ImageView heartImg;
+    private ImageView heartImg, gioHangImg;
     public int soLuong, tongTien;
     public String soLuongStr, foodIDstr, moneyStr;
 
@@ -40,8 +41,17 @@ public class Main_second extends AppCompatActivity {
         amountTv = findViewById(R.id.amountTv);
         billTv = findViewById(R.id.billTv);
         heartImg = findViewById(R.id.heartImg);
+        gioHangImg = findViewById(R.id.gioHangImg);
         soLuong = Integer.parseInt(amountTv.getText().toString());
 
+
+        gioHangImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main_second.this, CheckOut.class);
+                startActivity(intent);
+            }
+        });
 
         heartImg.setOnClickListener(new View.OnClickListener() {
             @Override

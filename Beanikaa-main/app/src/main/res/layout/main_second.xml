@@ -95,6 +95,7 @@
             />
 
         <ImageView
+            android:id="@+id/gioHangImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/gio_hang"
@@ -135,23 +136,14 @@
 
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="Mì xào hải sản cay"
+        android:text="Mì xào hải sản cay tặng 1 pepsi"
         android:textStyle="bold"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_gravity="center"
         />
-    <TextView
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:text="tặng 1 pepsi"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        />
+
 
     <TextView
         android:layout_width="match_parent"
