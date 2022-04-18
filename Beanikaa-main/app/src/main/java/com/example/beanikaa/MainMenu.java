@@ -131,8 +131,11 @@ public class MainMenu extends AppCompatActivity {
                         float rate = Float.valueOf(str_rate);
 
                         int sales = object.getInt("sales");
+                        int price = object.getInt("price");
+                        String address = object.getString("address");
 
-                        Food aFood = new Food(thumbnail, foodname, sales, rate);
+
+                        Food aFood = new Food(thumbnail, foodname, sales, rate, price, address);
 
                         foods_list.add(aFood);
                     }
