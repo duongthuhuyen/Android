@@ -11,7 +11,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.beanikaa.DetailedProductsActivity;
 import com.example.beanikaa.Model.Orders;
 import com.example.beanikaa.R;
 
@@ -76,15 +75,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(mContext, DetailedProductsActivity.class);
-
-                intent.putExtra("name",product.getName());
-                intent.putExtra("image",product.getThumbnail());
-                intent.putExtra("rate",product.getRating());
-                intent.putExtra("amount", product.getAmount());
-                intent.putExtra("price",product.getPrice());
-
-                mContext.startActivity(intent);
+//                Intent intent = new Intent(mContext, DetailedProductsActivity.class);
+//
+//                intent.putExtra("name",product.getName());
+//                intent.putExtra("image",product.getThumbnail());
+//                intent.putExtra("rate",product.getRating());
+//                intent.putExtra("amount", product.getAmount());
+//                intent.putExtra("price",product.getPrice());
+//
+//                mContext.startActivity(intent);
 
             }
         });

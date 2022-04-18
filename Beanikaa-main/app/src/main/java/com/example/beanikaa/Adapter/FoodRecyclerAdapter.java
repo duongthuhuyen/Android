@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.beanikaa.DetailedProductsActivity;
 import com.example.beanikaa.Main_second;
 import com.example.beanikaa.Model.Food;
 import com.example.beanikaa.R;
@@ -68,15 +67,11 @@ public class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapte
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, Main_second.class);
 
+                intent.putExtra("thumbnail", aFood.getThumbnail());
                 intent.putExtra("name", aFood.getfoodname());
                 intent.putExtra("address", aFood.getAddress());
                 intent.putExtra("rating", aFood.getRating());
                 intent.putExtra("price", aFood.getPrice());
-
-//                intent.putExtra("name",aFood.getfoodname());
-//                intent.putExtra("image",aFood.getThumbnail());
-//                intent.putExtra("rate",aFood.getRating());
-//                intent.putExtra("amount", aFood.getSales());
 
                 mContext.startActivity(intent);
             }
