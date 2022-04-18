@@ -50,7 +50,10 @@
         <entry key="..\:/Users/PC/OneDrive/Desktop/hoc-android/Android/Beanikaa/app/src/main/res/layout/home_native_item.xml" value="0.1921875" />
         <entry key="..\:/Users/PC/OneDrive/Desktop/hoc-android/Android/Beanikaa/app/src/main/res/layout/slide_horitorier.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_facebook_login.xml" value="0.15833333333333333" />
+        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.15833333333333333" />
+        <entry key="app/src/main/res/layout/check_out.xml" value="0.15833333333333333" />
+        <entry key="app/src/main/res/layout/foods_list_item_layout.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/layout/main_second.xml" value="0.33" />
       </map>
     </option>
