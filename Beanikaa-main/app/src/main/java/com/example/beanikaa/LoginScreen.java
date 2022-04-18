@@ -111,6 +111,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+
                         //Starting Write and Read data with URL (url của localhost)
                         //Creating array for parameters
                         String[] field = new String[2];

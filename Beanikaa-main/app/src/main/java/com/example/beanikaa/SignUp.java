@@ -34,7 +34,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        usernameInfo = findViewById(R.id.nameField);
+//        usernameInfo = findViewById(R.id.nameField);
         phoneInfo = findViewById(R.id.phoneField);
         emailInfo = findViewById(R.id.emailField);
         passwordInfo = findViewById(R.id.passwordField);
@@ -48,13 +48,13 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
 
                 String username, password, confirmpass, email, phonenumber;
-                username = String.valueOf(usernameInfo.getText());
+//                username = String.valueOf(usernameInfo.getText());
                 password = String.valueOf(passwordInfo.getText());
                 confirmpass = String.valueOf(confirmpasswordInfo.getText());
                 email = String.valueOf(emailInfo.getText());
                 phonenumber = String.valueOf(phoneInfo.getText());
 
-                if (username.equals("") && email.equals("") && phonenumber.equals("") && password.equals("") && confirmpass.equals(""))
+                if (email.equals("") && phonenumber.equals("") && password.equals("") && confirmpass.equals(""))
                     Toast.makeText(getApplicationContext(),"Please fill all the fields!",Toast.LENGTH_LONG).show();
 
                  else if (!CheckPhone(phonenumber)) Toast.makeText(getApplicationContext(),"Your phone number is not valid!",Toast.LENGTH_LONG).show();
@@ -66,22 +66,21 @@ public class SignUp extends AppCompatActivity {
                  else if(!CheckPassword(password)) Toast.makeText(getApplicationContext(),"Password must has at least 8 characters, 1 upper case alphabet, 1 number and 1 special character!",Toast.LENGTH_LONG).show();
 
                  else {
-                    //Start ProgressBar first (Set visibility VISIBLE)
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            String[] field = new String[4];
-                            field[0] = "username";
-                            field[1] = "password";
-                            field[2] = "email";
-                            field[3] = "phoneNumber";
+                            String[] field = new String[3];
+//                            field[0] = "username";
+                            field[0] = "password";
+                            field[1] = "email";
+                            field[2] = "phoneNumber";
 
-                            String[] data = new String[4];
-                            data[0] = username;
-                            data[1] = password;
-                            data[2] = email;
-                            data[3] = phonenumber;
+                            String[] data = new String[3];
+//                            data[0] = username;
+                            data[0] = password;
+                            data[1] = email;
+                            data[2] = phonenumber;
 
                             PutData putData = new PutData("http://192.168.188.243/Beanikaa/signup.php", "POST", field, data);
                             if (putData.startPut()) {

@@ -23,7 +23,6 @@ public class DetailedProductsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_products);
 
-        mToolbar = findViewById(R.id.toolbar);
         mImage = findViewById(R.id.image_view);
         mPrice = findViewById(R.id.price);
         mRating = findViewById(R.id.rating);
