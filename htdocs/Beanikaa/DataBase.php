@@ -1,6 +1,8 @@
 <?php
 require "DataBaseConfig.php";
 
+$conn = mysqli_connect("localhost","root","","beanikaa");
+
 class DataBase
 {
     public $connect;
@@ -34,20 +36,20 @@ class DataBase
         return mysqli_real_escape_string($this->connect, stripslashes(htmlspecialchars($data)));
     }
 
-    function logIn($table, $username, $password)
+    function logIn($table, $email, $password)
     {
-        $username = $this->prepareData($username);
+        $email = $this->prepareData($email);
         $password = $this->prepareData($password);
 
-        $this->sql = "select * from " . $table . " where phoneNumber = '" . $username . "'";
+        $this->sql = "select * from " . $table . " where email = '" . $email . "'";
 
         $result = mysqli_query($this->connect, $this->sql);
         $row = mysqli_fetch_assoc($result);
         
         if (mysqli_num_rows($result) != 0) {
-            $dbusername = $row['phoneNumber'];
+            $dbemail = $row['email'];
             $dbpassword = $row['password'];
-            if ($dbusername == $username && $password = $dbpassword) {
+            if ($dbemail == $email && $password = $dbpassword) {
                 $login = true;
             } else $login = false;
         } else $login = false;
@@ -55,15 +57,15 @@ class DataBase
         return $login;
     }
 
-    function signUp($table, $fullname, $email, $username, $password)
+    function signUp($table, $password, $email, $phonenumber )
     {
-        $fullname = $this->prepareData($fullname);
-        $username = $this->prepareData($username);
-        $password = $this->prepareData($password);
+        $table = $this->prepareData($table);
+        // $username = $this->prepareData($username);
+        $phonenumber = $this->prepareData($phonenumber);
         $email = $this->prepareData($email);
         $password = password_hash($password, PASSWORD_DEFAULT);
         $this->sql =
-            "INSERT INTO " . $table . " (fullname, username, password, email) VALUES ('" . $fullname . "','" . $username . "','" . $password . "','" . $email . "')";
+            "INSERT INTO " . $table . " (password, email, phoneNumber) VALUES ('" . $password . "','" . $email . "','" . $phonenumber . "')";
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
         } else return false;
