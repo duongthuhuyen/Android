@@ -125,23 +125,12 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
 
 //<<<<<<< HEAD
                         PutData putData = new PutData("http://192.168.188.243//Beanikaa/login.php", "POST", field, data);
-//=======
-//                        PutData putData = new PutData("http://192.168.0.102/android/login", "POST", field, data);
+
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = putData.getResult();
                                 if(result!= null){
                                     progressBar.setVisibility(View.GONE);
-                                    SendMail sendMail = new SendMail(LoginScreen.this,"huyen.dtt19010061@st.phenikaa-uni.edu.vn","hi","hello");
-                                    sendMail.send();
-
-                                    //ObjectMapper objectMapper = new ObjectMapper();
-                                //    Account.account = objectMapper.readValue(result,User.class);
-                                   //Account.account= new Gson().fromJson(result,User.class);
-                                   // String s ="{\"id\":\"1\",\"password\":\"1234\",\"email\":\"huyen\",\phoneNumber"\":\"01234567\",\"created_date\":\"2022-03-04 16:25:49\",\"created_by\":null,\"modified_date\":\"2022-03-04 16:25:49\",\"modified_by\":null,\"idRole\":\"0\"}";
-                                   // Account.account= new Gson().fromJson(s,User.class);
-                                    //System.out.println(Account.account);
-
                                     Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show();
                                 }else{
                                     Toast.makeText(getApplicationContext(),"nothing",Toast.LENGTH_SHORT).show();
@@ -149,14 +138,13 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
 
                                 if(result.equals("Login Success!")){
                                     progressBar.setVisibility(View.GONE);
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), MainMenu.class);
                                     startActivity(intent);
                                     finish();
                                 }
                                 else {
                                     Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
                                 }
-                               // checkLogin("http://192.168.0.102/android/login");
                             }
                         }
                     }

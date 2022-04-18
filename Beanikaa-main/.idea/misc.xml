@@ -3,18 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Beanikaa-main/app/src/main/res/drawable/bogoc.xml" value="0.2095" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/drawable/ic_chevron_left_black_24dp.xml" value="0.215" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/activity_detailed_products.xml" value="0.18" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/activity_google_login.xml" value="0.209375" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/activity_login_screen.xml" value="0.209375" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/activity_main_menu.xml" value="0.22" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/activity_order_history.xml" value="0.25" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/activity_sign_up.xml" value="0.209375" />
+        <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/banner_item.xml" value="0.209375" />
+        <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/foods_list_item_layout.xml" value="0.209375" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/fragment_slide.xml" value="0.209375" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/home_horitorier.xml" value="0.209375" />
-        <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/home_native_item.xml" value="0.209375" />
+        <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/home_native_item.xml" value="0.33" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/main_second.xml" value="0.209375" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/products_list_item_layout.xml" value="0.209375" />
         <entry key="..\:/Android/Beanikaa-main/app/src/main/res/layout/slide_horitorier.xml" value="0.209375" />
@@ -46,16 +50,8 @@
         <entry key="..\:/Users/PC/OneDrive/Desktop/hoc-android/Android/Beanikaa/app/src/main/res/layout/home_native_item.xml" value="0.1921875" />
         <entry key="..\:/Users/PC/OneDrive/Desktop/hoc-android/Android/Beanikaa/app/src/main/res/layout/slide_horitorier.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_facebook_login.xml" value="0.15833333333333333" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.15833333333333333" />
-        <entry key="app/src/main/res/layout/check_out.xml" value="0.32083333333333336" />
-        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.32083333333333336" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.32083333333333336" />
-        <entry key="app/src/main/res/layout/fragment_slide.xml" value="0.32083333333333336" />
-        <entry key="app/src/main/res/layout/home_horitorier.xml" value="0.32083333333333336" />
-        <entry key="app/src/main/res/layout/home_native_item.xml" value="0.32083333333333336" />
-        <entry key="app/src/main/res/layout/main_second.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/slide_horitorier.xml" value="0.32083333333333336" />
+        <entry key="app/src/main/res/layout/main_second.xml" value="0.33" />
       </map>
     </option>
   </component>

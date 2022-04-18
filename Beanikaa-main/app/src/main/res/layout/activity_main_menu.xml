@@ -1,9 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainMenu">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    Header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:background="#ffd2c5"
+        android:layout_marginBottom="5dp">
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/map"
+            android:layout_marginTop="40dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yên Nghĩa"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bell"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="110dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/mail"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/avata"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="15dp"
+
+            android:id="@+id/demoClick"
+            android:clickable="true"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bogoc"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/search"
+            android:layout_margin="5dp"
+            />
+
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:hint="Looking for restaurant or dishes ..."
+            />
+    </LinearLayout>
+
+<!--    Menu categories -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <ImageButton
+            android:id="@+id/rice_category"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/rice"
+            android:background="@color/white"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/noodles_category"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/noodles"
+            android:background="@color/white"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/fastfood_category"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/fastfood"
+            android:background="@color/white"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/drinks_category"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/drinks"
+            android:background="@color/white"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+
+<!--    Labels-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp">
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textColor="#404040"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/bahnschrift"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="Rice" />
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textColor="#404040"
+            android:fontFamily="@font/bahnschrift"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:text="Noodles"/>
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textColor="#404040"
+            android:fontFamily="@font/bahnschrift"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:text="Fastfood"/>
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textColor="#404040"
+            android:fontFamily="@font/bahnschrift"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:text="Drinks"/>
+    </LinearLayout>
+
+<!--    Banners-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerMain"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"/>
+
+<!--    Foods-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/food_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+
+</LinearLayout>

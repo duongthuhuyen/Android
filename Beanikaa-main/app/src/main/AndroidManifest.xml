@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainMenu"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".OrderHistory"
             android:exported="true" />
@@ -43,17 +43,11 @@
         </activity>
         <activity
             android:name=".MainActivity"
-<<<<<<< HEAD
             android:exported="true" />
-=======
-<<<<<<< HEAD
-            android:exported="true">
-
-        </activity>
 
         <activity
             android:name=".Main_second"
-            android:exported="true" >
+            android:exported="true" />
 
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
@@ -61,14 +55,6 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 
-        </activity>
-=======
-            android:exported="true"></activity>
->>>>>>> 101956924a494c6600e8c93e230d11ce376c3b74
-        <activity
-            android:name=".Main_second"
-            android:exported="true" />
->>>>>>> 46a7c32316a85842a79163607562c84d34849d72
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

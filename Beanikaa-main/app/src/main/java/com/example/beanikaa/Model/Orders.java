@@ -1,4 +1,4 @@
-package com.example.beanikaa;
+package com.example.beanikaa.Model;
 
 public class Orders {
     private String name, thumbnail;

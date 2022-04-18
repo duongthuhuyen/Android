@@ -1,4 +1,4 @@
-package com.example.beanikaa;
+package com.example.beanikaa.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,13 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.beanikaa.DetailedProductsActivity;
+import com.example.beanikaa.Model.Orders;
+import com.example.beanikaa.R;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +27,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     private List<Orders> ordersList = new ArrayList<>();
 
 
-    public RecyclerAdapter (Context context,List<Orders> products){
+    public RecyclerAdapter (Context context,List<Orders> ordersList){
         this.mContext = context;
-        this.ordersList = products;
+        this.ordersList = ordersList;
     }
 
 
