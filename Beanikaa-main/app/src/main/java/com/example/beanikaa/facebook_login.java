@@ -74,7 +74,7 @@ public class facebook_login extends AppCompatActivity {
 //                Tvemail.setVisibility(View.VISIBLE);
 //                Tvfirst_name.setVisibility(View.VISIBLE);
 //                result();
-                Intent intent = new Intent(facebook_login.this, Main_second.class);
+                Intent intent = new Intent(facebook_login.this, MainMenu.class);
                 startActivity(intent);
             }
 

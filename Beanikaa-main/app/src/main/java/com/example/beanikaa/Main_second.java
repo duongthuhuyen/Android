@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.beanikaa.api.Api;
 import com.example.beanikaa.result.Second_screen;
+import com.squareup.picasso.Picasso;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -25,12 +26,24 @@ public class Main_second extends AppCompatActivity {
 
     private Button congBtn, truBtn, cartBtn;
     private TextView amountTv, billTv;
-    private ImageView heartImg, gioHangImg;
+    private ImageView heartImg, gioHangImg, fImg;
     public int soLuong, tongTien;
     public String soLuongStr, foodIDstr, moneyStr;
 
+    private Intent intent;
+
+    private TextView fName, fAddress, fRating;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        intent = getIntent();
+        String foodName = (String) intent.getStringExtra("name");
+        String foodAddress = (String) intent.getStringExtra("address");
+        String foodRating = (String) intent.getStringExtra("rating");
+        String foodPrice = (String) intent.getStringExtra("price");
+        int price = Integer.parseInt(foodPrice);
+        String foodImage = (String) intent.getStringExtra("thumbnail");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_second);
@@ -44,12 +57,21 @@ public class Main_second extends AppCompatActivity {
         gioHangImg = findViewById(R.id.gioHangImg);
         soLuong = Integer.parseInt(amountTv.getText().toString());
 
+        fName = findViewById(R.id.FoodNameTv);
+        fAddress = findViewById(R.id.addressTv);
+        fRating = findViewById(R.id.ratingTv);
+        fImg = findViewById(R.id.img1);
+
+        fName.setText(foodName);
+        fAddress.setText(foodAddress);
+        fRating.setText(foodRating);
+        Picasso.get().load(foodImage).into(fImg);
 
         gioHangImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_second.this, CheckOut.class);
-                startActivity(intent);
+                Intent intent123 = new Intent(Main_second.this, CheckOut.class);
+                startActivity(intent123);
             }
         });
 
@@ -73,7 +95,7 @@ public class Main_second extends AppCompatActivity {
             public void onClick(View view) {
                 soLuong++;
                 amountTv.setText(String.valueOf(soLuong));
-                tongTien = 55 * soLuong;
+                tongTien = price * soLuong;
                 billTv.setText(String.valueOf(tongTien) + ".000đ");
             }
         });

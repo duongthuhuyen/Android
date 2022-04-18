@@ -72,6 +72,7 @@ public class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapte
                 intent.putExtra("address", aFood.getAddress());
                 intent.putExtra("rating", aFood.getRating());
                 intent.putExtra("price", aFood.getPrice());
+                intent.putExtra("thumbnail", aFood.getThumbnail());
 
                 mContext.startActivity(intent);
             }

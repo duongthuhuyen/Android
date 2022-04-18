@@ -29,6 +29,9 @@
             android:name=".google_login"
             android:exported="false" />
         <activity
+            android:name=".CheckOut"
+            android:exported="false" />
+        <activity
             android:name=".facebook_login"
             android:exported="false">
         </activity>
