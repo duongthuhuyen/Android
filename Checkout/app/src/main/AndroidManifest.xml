@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Checkout">
         <activity
-            android:name=".MainActivity"
+<<<<<<< HEAD
+            android:name=".CheckOut"
+=======
+            android:name=".Food_checkout"
+>>>>>>> 46a7c32316a85842a79163607562c84d34849d72
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
