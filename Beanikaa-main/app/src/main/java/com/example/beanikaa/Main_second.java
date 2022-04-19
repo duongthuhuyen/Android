@@ -41,8 +41,7 @@ public class Main_second extends AppCompatActivity {
         String foodName = (String) intent.getStringExtra("name");
         String foodAddress = (String) intent.getStringExtra("address");
         String foodRating = (String) intent.getStringExtra("rating");
-        String foodPrice = (String) intent.getStringExtra("price");
-        int price = Integer.parseInt(foodPrice);
+        int foodPrice = (int) intent.getIntExtra("price", -1);
         String foodImage = (String) intent.getStringExtra("thumbnail");
 
         super.onCreate(savedInstanceState);
@@ -95,7 +94,7 @@ public class Main_second extends AppCompatActivity {
             public void onClick(View view) {
                 soLuong++;
                 amountTv.setText(String.valueOf(soLuong));
-                tongTien = price * soLuong;
+                tongTien = foodPrice * soLuong;
                 billTv.setText(String.valueOf(tongTien) + ".000đ");
             }
         });
@@ -106,7 +105,7 @@ public class Main_second extends AppCompatActivity {
                 if (soLuong > 1) {
                     soLuong--;
                     amountTv.setText(String.valueOf(soLuong));
-                    tongTien = 55 * soLuong;
+                    tongTien = foodPrice * soLuong;
                     billTv.setText(String.valueOf(tongTien) + ".000đ");
                 }
             }
