@@ -26,8 +26,9 @@ public class Main_second extends AppCompatActivity {
 
     private Button congBtn, truBtn, cartBtn;
     private TextView amountTv, billTv;
-    private ImageView heartImg, gioHangImg, fImg;
-    public int soLuong, tongTien;
+    private ImageView heartImg, gioHangImg, fImg, fImg2, fImg3;
+    public int soLuong;
+    public double tongTien;
     public String soLuongStr, foodIDstr, moneyStr;
 
     private Intent intent;
@@ -40,9 +41,9 @@ public class Main_second extends AppCompatActivity {
         intent = getIntent();
         String foodName = (String) intent.getStringExtra("name");
         String foodAddress = (String) intent.getStringExtra("address");
-        String foodRating = (String) intent.getStringExtra("rating");
-        String foodPrice = (String) intent.getStringExtra("price");
-        int price = Integer.parseInt(foodPrice);
+        float foodRating = (float) intent.getFloatExtra("rating", 2);
+        double foodPrice = (double) intent.getDoubleExtra("price", 2d);
+//        int price = Integer.parseInt(foodPrice);
         String foodImage = (String) intent.getStringExtra("thumbnail");
 
         super.onCreate(savedInstanceState);
@@ -61,11 +62,16 @@ public class Main_second extends AppCompatActivity {
         fAddress = findViewById(R.id.addressTv);
         fRating = findViewById(R.id.ratingTv);
         fImg = findViewById(R.id.img1);
+        fImg2 = findViewById(R.id.img2);
+        fImg3 = findViewById(R.id.img3);
 
         fName.setText(foodName);
         fAddress.setText(foodAddress);
-        fRating.setText(foodRating);
+        fRating.setText(String.valueOf(foodRating));
         Picasso.get().load(foodImage).into(fImg);
+        Picasso.get().load(foodImage).into(fImg2);
+        Picasso.get().load(foodImage).into(fImg3);
+        billTv.setText(String.valueOf(foodPrice) + "đ");
 
         gioHangImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,8 +101,8 @@ public class Main_second extends AppCompatActivity {
             public void onClick(View view) {
                 soLuong++;
                 amountTv.setText(String.valueOf(soLuong));
-                tongTien = price * soLuong;
-                billTv.setText(String.valueOf(tongTien) + ".000đ");
+                tongTien = foodPrice * soLuong;
+                billTv.setText(String.valueOf(tongTien) + "đ");
             }
         });
 
@@ -106,8 +112,8 @@ public class Main_second extends AppCompatActivity {
                 if (soLuong > 1) {
                     soLuong--;
                     amountTv.setText(String.valueOf(soLuong));
-                    tongTien = 55 * soLuong;
-                    billTv.setText(String.valueOf(tongTien) + ".000đ");
+                    tongTien = foodPrice * soLuong;
+                    billTv.setText(String.valueOf(tongTien) + "đ");
                 }
             }
         });

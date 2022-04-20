@@ -2,10 +2,11 @@ package com.example.beanikaa.Model;
 
 public class Food {
     private String foodname, thumbnail, address;
-    private int sales, price;
+    private int sales;
+    private double price;
     private float rating;
 
-    public Food(String thumbnail, String foodname, int sales, float rating, int price, String address){
+    public Food(String thumbnail, String foodname, int sales, float rating, double price, String address){
         this.thumbnail = thumbnail;
         this.foodname = foodname;
         this.sales = sales;
@@ -46,11 +47,11 @@ public class Food {
         this.rating = rating;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

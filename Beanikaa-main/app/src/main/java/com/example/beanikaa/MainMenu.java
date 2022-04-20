@@ -131,7 +131,7 @@ public class MainMenu extends AppCompatActivity {
                         float rate = Float.valueOf(str_rate);
 
                         int sales = object.getInt("sales");
-                        int price = object.getInt("price");
+                        double price = object.getDouble("price");
                         String address = object.getString("address");
 
 
