@@ -73,6 +73,7 @@
         android:layout_marginBottom="10dp">
 
         <ImageView
+            android:id="@+id/searchBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/search"
@@ -80,6 +81,7 @@
             />
 
         <EditText
+            android:id="@+id/searchEt"
             android:layout_width="400dp"
             android:layout_height="40dp"
             android:hint="Looking for restaurant or dishes ..."

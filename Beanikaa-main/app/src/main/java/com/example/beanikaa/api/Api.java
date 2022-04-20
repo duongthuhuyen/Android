@@ -1,5 +1,6 @@
 package com.example.beanikaa.api;
 
+import com.example.beanikaa.common.Account;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -17,7 +18,7 @@ import retrofit2.http.Part;
 public interface Api {
 
     // link API: Đơi link api của Huyền
-    public static final String DOMAIN = "http://facerecognition.ap.ngrok.io/";
+    public static final String DOMAIN = Account.link + "order";
 
     Gson gson = new GsonBuilder().setDateFormat("yyyy MM dd HH:mm:ss").create();
 

@@ -123,7 +123,12 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                         data[0] = email;
                         data[1] = password;
 
+<<<<<<< HEAD
                         PutData putData = new PutData("http://192.168.188.243//Beanikaa/login.php", "POST", field, data);
+=======
+//<<<<<<< HEAD
+                        PutData putData = new PutData(Account.link + "login.php", "POST", field, data);
+>>>>>>> 7cdf83cfe8ee3ddddd1aa9c690519e3bd61b59ef
 
                         if (putData.startPut()) {
                             if (putData.onComplete()) {

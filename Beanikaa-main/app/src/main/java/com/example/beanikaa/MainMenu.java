@@ -7,17 +7,23 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.beanikaa.Adapter.FoodRecyclerAdapter;
 import com.example.beanikaa.Adapter.ViewPagerAdapter;
 import com.example.beanikaa.Model.Food;
+import com.example.beanikaa.common.Account;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,7 +38,12 @@ public class MainMenu extends AppCompatActivity {
     private RecyclerView.LayoutManager manager;
     private RecyclerView.Adapter mAdapter;
     private List<Food> foods_list;
-    private static final String BASE_URL = "http://192.168.188.243/Beanikaa/getFoodList.php";
+    private static final String BASE_URL = Account.link + "getFoodList.php";
+
+    private EditText nameField;
+    private ImageView searchBtn;
+
+    public String fName;
 
     ImageButton Rice_btn, Noodles_btn, Fastfood_btn, Drinks_btn;
     String category_url;
@@ -48,6 +59,10 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        nameField = findViewById(R.id.searchEt);
+        searchBtn = findViewById(R.id.searchBtn);
+        fName = nameField.getText().toString();
 
         Rice_btn = findViewById(R.id.rice_category);
         Noodles_btn = findViewById(R.id.noodles_category);
@@ -66,13 +81,22 @@ public class MainMenu extends AppCompatActivity {
 
         getFoods(BASE_URL);
 
+//        Search
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                call API search
+                searchAPI(fName);
+            }
+        });
+
 //        Rice category
         Rice_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 recyclerView.setAdapter(null);
                 foods_list.clear();
-                category_url = "http://192.168.188.243/Beanikaa/getListCategory/getRiceList.php";
+                category_url = Account.link + "getRiceList.php";
                 getFoods(category_url);
             }
         });
@@ -83,7 +107,7 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View view) {
                 recyclerView.setAdapter(null);
                 foods_list.clear();
-                category_url = "http://192.168.188.243/Beanikaa/getListCategory/getNoodlesList.php";
+                category_url = Account.link + "getListCategory/getNoodlesList.php";
                 getFoods(category_url);
             }
         });
@@ -94,7 +118,7 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View view) {
                 recyclerView.setAdapter(null);
                 foods_list.clear();
-                category_url = "http://192.168.188.243/Beanikaa/getListCategory/getFastfoodList.php";
+                category_url = Account.link + "getListCategory/getFastfoodList.php";
                 getFoods(category_url);
             }
         });
@@ -105,10 +129,43 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View view) {
                 recyclerView.setAdapter(null);
                 foods_list.clear();
-                category_url = "http://192.168.188.243/Beanikaa/getListCategory/getDrinksList.php";
+                category_url = Account.link + "getListCategory/getDrinksList.php";
                 getFoods(category_url);
             }
         });
+    }
+
+//    insert code searchAPI here
+    private void searchAPI(String name) {
+        RequestQueue requestQueue = Volley.newRequestQueue(MainMenu.this);
+        String url = "http://192.168.0.100/androidapi/product/getProduct/0";
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        String thumbnel = jsonObject.getString("thumbnal");
+                        String address = jsonObject.getString("address");
+                        double star = jsonObject.getInt("vote");
+                        double price = jsonObject.getDouble("price");
+                        System.out.println(thumbnel);
+//                        homeItemModelArrayList.add(new HomeItemModel(thumbnel, address, star, Double.toString(price)));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                //  Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("erro " + error.toString());
+                Toast.makeText(MainMenu.this, "erro" + error.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+        requestQueue.add(jsonArrayRequest);
     }
 
 

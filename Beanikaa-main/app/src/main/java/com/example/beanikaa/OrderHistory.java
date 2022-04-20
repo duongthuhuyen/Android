@@ -14,6 +14,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.beanikaa.Adapter.RecyclerAdapter;
 import com.example.beanikaa.Model.Orders;
+import com.example.beanikaa.common.Account;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,7 +28,7 @@ public class OrderHistory extends AppCompatActivity {
     private RecyclerView.LayoutManager manager;
     private RecyclerView.Adapter mAdapter;
     private List<Orders> ordersList;
-    private static final String BASE_URL = "http://192.168.188.243/Beanikaa/OrderHistory.php";
+    private static final String BASE_URL =  Account.link + "OrderHistory.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

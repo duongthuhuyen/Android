@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.beanikaa.common.Account;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.util.regex.Matcher;
@@ -82,7 +83,7 @@ public class SignUp extends AppCompatActivity {
                             data[1] = email;
                             data[2] = phonenumber;
 
-                            PutData putData = new PutData("http://192.168.188.243/Beanikaa/signup.php", "POST", field, data);
+                            PutData putData = new PutData(Account.link + "signup.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
