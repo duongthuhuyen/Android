@@ -25,6 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.beanikaa.Adapter.FoodRecyclerAdapter;
+import com.example.beanikaa.Model.Food;
 import com.example.beanikaa.Service.SendMail;
 import com.example.beanikaa.common.Account;
 import com.example.beanikaa.data.Pojo.User;
@@ -40,6 +42,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginScreen extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
     private static final String TAG = LoginScreen.class.getName();
@@ -123,16 +129,16 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                         data[0] = email;
                         data[1] = password;
 
-<<<<<<< HEAD
-                        PutData putData = new PutData("http://192.168.188.243//Beanikaa/login.php", "POST", field, data);
-=======
-//<<<<<<< HEAD
+
+//                       PutData putData = new PutData("http://192.168.188.243//Beanikaa/login.php", "POST", field, data);
+
                         PutData putData = new PutData(Account.link + "login.php", "POST", field, data);
->>>>>>> 7cdf83cfe8ee3ddddd1aa9c690519e3bd61b59ef
+
 
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = putData.getResult();
+                                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
                                 if(result!= null){
                                     progressBar.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show();
@@ -140,7 +146,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                                     Toast.makeText(getApplicationContext(),"nothing",Toast.LENGTH_SHORT).show();
                                 }
 
-                                if(result.equals("Login Success!")){
+                                if(result.contains("Login Success!")){
                                     progressBar.setVisibility(View.GONE);
                                     Intent intent = new Intent(getApplicationContext(), MainMenu.class);
                                     startActivity(intent);
@@ -233,4 +239,44 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
             }
         }
     }
+
+
+    private void getAccount_info(String login_result_url){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, login_result_url, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray jsonArray = new JSONArray(response);
+
+                    for (int i = 0; i<=jsonArray.length(); i++){
+                        JSONObject object = jsonArray.getJSONObject(i);
+
+                        String thumbnail = object.getString("img");
+                        String foodname = object.getString("foodName");
+
+                        double rating = object.getDouble("foodRating");
+                        String str_rate = String.valueOf(rating);
+                        float rate = Float.valueOf(str_rate);
+
+                        int sales = object.getInt("sales");
+                        double price = object.getDouble("price");
+                        String address = object.getString("address");
+
+
+                        Food aFood = new Food(thumbnail, foodname, sales, rate, price, address);
+                    }
+                } catch (JSONException e) {}
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(LoginScreen.this, error.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Volley.newRequestQueue(LoginScreen.this).add(stringRequest);
+
+    }
+
 }

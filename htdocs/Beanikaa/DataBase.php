@@ -8,10 +8,13 @@ class DataBase
     public $connect;
     public $data;
     private $sql;
+
     protected $servername;
     protected $username;
     protected $password;
     protected $databasename;
+
+    public $dpId;
 
     public function __construct()
     {
@@ -38,6 +41,9 @@ class DataBase
 
     function logIn($table, $email, $password)
     {
+        $account_info = array();
+
+
         $email = $this->prepareData($email);
         $password = $this->prepareData($password);
 
@@ -46,15 +52,19 @@ class DataBase
         $result = mysqli_query($this->connect, $this->sql);
         $row = mysqli_fetch_assoc($result);
         
+
         if (mysqli_num_rows($result) != 0) {
             $dbemail = $row['email'];
             $dbpassword = $row['password'];
-            if ($dbemail == $email && $password = $dbpassword) {
-                $login = true;
-            } else $login = false;
-        } else $login = false;
-
-        return $login;
+            if ($email == $dbemail && password_verify($password, $dbpassword)) {
+    
+                $account_info['id'] = $row['id'];
+                $account_info['email'] = $row['email'];
+                $account_info['phonenumber'] = $row['phoneNumber'];
+                
+            }
+        }
+        return $account_info;
     }
 
     function signUp($table, $password, $email, $phonenumber )
@@ -70,22 +80,6 @@ class DataBase
             return true;
         } else return false;
     }
-
-    function order($email,$foodID,$number,$note,$customerID,$telephone,$address){
-        $email = $this->prepareData($email);
-		$foodID = $this->prepareData($foodID);
-		$number = $this->prepareData($number);
-		$note = $this->prepareData($note);
-		$customerID = $this->prepareData($customerID);
-		$telephone = $this->prepareData($telephone);
-		$address = $this->prepareData($address);
-
-        $this->sql = "INSERT INTO `order`( `idUserName`, `idfoodNew`, `soluong`, `address`, `phoneNumber`, `Note`, `status`) VALUES ('".$customerID."','".$foodIDva."','".$number."','".$address."','".$phonenumber."','".$note."',1)";
-        if (mysqli_query($this->connect, $this->sql)) {
-            return true;
-        } else return false;
-    }
-
 
 }
 

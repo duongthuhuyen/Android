@@ -1,6 +1,7 @@
 <?php
 
 include('DataBase.php');
+$db = new DataBase();
 
 $stmt01 = $conn->prepare("SELECT idfoodNew, soluong FROM orders WHERE idUserName = 1");
 $stmt01 ->execute();

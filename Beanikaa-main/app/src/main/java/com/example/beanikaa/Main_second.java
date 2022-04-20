@@ -41,14 +41,11 @@ public class Main_second extends AppCompatActivity {
         intent = getIntent();
         String foodName = (String) intent.getStringExtra("name");
         String foodAddress = (String) intent.getStringExtra("address");
-<<<<<<< HEAD
         float foodRating = (float) intent.getFloatExtra("rating", 2);
         double foodPrice = (double) intent.getDoubleExtra("price", 2d);
 //        int price = Integer.parseInt(foodPrice);
-=======
-        String foodRating = (String) intent.getStringExtra("rating");
-        int foodPrice = (int) intent.getIntExtra("price", -1);
->>>>>>> 7cdf83cfe8ee3ddddd1aa9c690519e3bd61b59ef
+//        String foodRating = (String) intent.getStringExtra("rating");
+//        int foodPrice = (int) intent.getIntExtra("price", -1);
         String foodImage = (String) intent.getStringExtra("thumbnail");
 
         super.onCreate(savedInstanceState);
@@ -107,11 +104,10 @@ public class Main_second extends AppCompatActivity {
                 soLuong++;
                 amountTv.setText(String.valueOf(soLuong));
                 tongTien = foodPrice * soLuong;
-<<<<<<< HEAD
                 billTv.setText(String.valueOf(tongTien) + "đ");
-=======
-                billTv.setText(String.valueOf(tongTien) + ".000đ");
->>>>>>> 7cdf83cfe8ee3ddddd1aa9c690519e3bd61b59ef
+//=======
+//                billTv.setText(String.valueOf(tongTien) + ".000đ");
+//>>>>>>> 7cdf83cfe8ee3ddddd1aa9c690519e3bd61b59ef
             }
         });
 
@@ -122,11 +118,8 @@ public class Main_second extends AppCompatActivity {
                     soLuong--;
                     amountTv.setText(String.valueOf(soLuong));
                     tongTien = foodPrice * soLuong;
-<<<<<<< HEAD
                     billTv.setText(String.valueOf(tongTien) + "đ");
-=======
-                    billTv.setText(String.valueOf(tongTien) + ".000đ");
->>>>>>> 7cdf83cfe8ee3ddddd1aa9c690519e3bd61b59ef
+//                    billTv.setText(String.valueOf(tongTien) + ".000đ");
                 }
             }
         });
