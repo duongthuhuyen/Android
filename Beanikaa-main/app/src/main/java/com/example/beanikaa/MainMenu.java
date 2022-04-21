@@ -180,6 +180,7 @@ public class MainMenu extends AppCompatActivity {
                     for (int i = 0; i<=jsonArray.length(); i++){
                         JSONObject object = jsonArray.getJSONObject(i);
 
+                        String id = object.getString("id");
                         String thumbnail = object.getString("img");
                         String foodname = object.getString("foodName");
 
@@ -192,7 +193,7 @@ public class MainMenu extends AppCompatActivity {
                         String address = object.getString("address");
 
 
-                        Food aFood = new Food(thumbnail, foodname, sales, rate, price, address);
+                        Food aFood = new Food(id, thumbnail, foodname, sales, rate, price, address);
 
                         foods_list.add(aFood);
                     }

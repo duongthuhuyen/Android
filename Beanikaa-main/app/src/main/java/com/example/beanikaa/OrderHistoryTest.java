@@ -25,7 +25,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderHistory extends AppCompatActivity {
+public class OrderHistoryTest extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager manager;
@@ -39,7 +39,7 @@ public class OrderHistory extends AppCompatActivity {
         setContentView(R.layout.activity_order_history);
 
         recyclerView = findViewById(R.id.products_recyclerView);
-        manager = new GridLayoutManager(OrderHistory.this, 1);
+        manager = new GridLayoutManager(OrderHistoryTest.this, 1);
         recyclerView.setLayoutManager(manager);
         ordersList = new ArrayList<>();
 
@@ -48,17 +48,16 @@ public class OrderHistory extends AppCompatActivity {
 
         String[] data = new String[1];
         SharedPreferences sp1 = this.getSharedPreferences("Login", MODE_PRIVATE);
-        data[0] = String.valueOf(sp1.getInt("id", 0));
+        data[0] = String.valueOf(sp1.getInt("id", 9));
 
         PutData putData = new PutData(BASE_URL, "POST", field, data);
         if (putData.startPut()) {
             if (putData.onComplete()) {
                 String result = putData.getResult();
-                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG
-                ).show();
 
+                JSONArray jsonArray = null;
                 try {
-                    JSONArray jsonArray = new JSONArray(result);
+                    jsonArray = new JSONArray(result);
                     for (int i = 0; i <= jsonArray.length(); i++) {
                         JSONObject object = jsonArray.getJSONObject(i);
 
@@ -79,7 +78,7 @@ public class OrderHistory extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                mAdapter = new RecyclerAdapter(OrderHistory.this, ordersList);
+                mAdapter = new RecyclerAdapter(OrderHistoryTest.this, ordersList);
                 recyclerView.setAdapter(mAdapter);
             }
         }

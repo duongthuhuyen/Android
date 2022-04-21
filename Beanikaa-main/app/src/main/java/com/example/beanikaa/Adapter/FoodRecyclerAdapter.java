@@ -67,6 +67,7 @@ public class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapte
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, Main_second.class);
 
+                intent.putExtra("id", aFood.getId());
                 intent.putExtra("thumbnail", aFood.getThumbnail());
                 intent.putExtra("name", aFood.getfoodname());
                 intent.putExtra("address", aFood.getAddress());
