@@ -54,8 +54,6 @@ public class OrderHistory extends AppCompatActivity {
         if (putData.startPut()) {
             if (putData.onComplete()) {
                 String result = putData.getResult();
-                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG
-                ).show();
 
                 try {
                     JSONArray jsonArray = new JSONArray(result);

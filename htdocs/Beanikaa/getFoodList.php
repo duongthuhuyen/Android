@@ -12,6 +12,7 @@ while($stmt ->fetch()){
 
     $temp = array();
 	
+	// $temp['id'] = $id
 	$temp['img'] = $thumbnail;
 	$temp['foodName'] = $foodname;
 	$temp['foodRating'] = $foodrating;

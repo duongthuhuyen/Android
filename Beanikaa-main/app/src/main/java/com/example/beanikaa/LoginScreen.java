@@ -145,7 +145,6 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = putData.getResult();
-                                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
                                 if(result!= null){
                                     progressBar.setVisibility(View.GONE);
                                 }else{

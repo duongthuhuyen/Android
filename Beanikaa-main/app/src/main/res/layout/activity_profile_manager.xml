@@ -120,13 +120,15 @@
             android:paddingLeft="30dp"/>
 
         <TextView
+            android:id="@+id/order_btn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="My order history"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:gravity="center_vertical"
-            android:paddingLeft="30dp"/>
+            android:paddingLeft="30dp"
+            android:clickable="true"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -138,6 +140,7 @@
             android:paddingLeft="30dp"/>
 
         <TextView
+            android:id="@+id/logout_btn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Log out"

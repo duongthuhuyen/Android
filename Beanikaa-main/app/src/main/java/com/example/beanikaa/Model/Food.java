@@ -1,13 +1,13 @@
 package com.example.beanikaa.Model;
 
 public class Food {
-    private String id, foodname, thumbnail, address;
+    private String foodname, thumbnail, address;
     private int sales;
     private double price;
     private float rating;
 
-    public Food(String id, String thumbnail, String foodname, int sales, float rating, double price, String address){
-        this.id = id;
+    public Food( String thumbnail, String foodname, int sales, float rating, double price, String address){
+//        this.id = id;
         this.thumbnail = thumbnail;
         this.foodname = foodname;
         this.sales = sales;
@@ -16,13 +16,13 @@ public class Food {
         this.address = address;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
     public String getfoodname() {
         return foodname;

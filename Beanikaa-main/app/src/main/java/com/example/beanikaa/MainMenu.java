@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,6 +48,7 @@ public class MainMenu extends AppCompatActivity {
 
     ImageButton Rice_btn, Noodles_btn, Fastfood_btn, Drinks_btn;
     String category_url;
+    ImageView profile_img;
 
 //    Banner
     ViewPager mViewPager;
@@ -69,6 +71,8 @@ public class MainMenu extends AppCompatActivity {
         Fastfood_btn = findViewById(R.id.fastfood_category);
         Drinks_btn = findViewById(R.id.drinks_category);
 
+        profile_img = findViewById(R.id.profile_btn);
+
         recyclerView = findViewById(R.id.food_recyclerView);
         manager = new LinearLayoutManager(MainMenu.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(manager);
@@ -80,6 +84,17 @@ public class MainMenu extends AppCompatActivity {
         mViewPager.setAdapter(mViewPagerAdapter);
 
         getFoods(BASE_URL);
+
+
+//        Profile manager
+        profile_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Profile_manager.class);
+                startActivity(intent);
+            }
+        });
+
 
 //        Search
         searchBtn.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +111,7 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View view) {
                 recyclerView.setAdapter(null);
                 foods_list.clear();
-                category_url = Account.link + "getRiceList.php";
+                category_url = Account.link + "getListCategory/getRiceList.php";
                 getFoods(category_url);
             }
         });
@@ -180,7 +195,7 @@ public class MainMenu extends AppCompatActivity {
                     for (int i = 0; i<=jsonArray.length(); i++){
                         JSONObject object = jsonArray.getJSONObject(i);
 
-                        String id = object.getString("id");
+//                        String id = object.getString("id");
                         String thumbnail = object.getString("img");
                         String foodname = object.getString("foodName");
 
@@ -193,7 +208,7 @@ public class MainMenu extends AppCompatActivity {
                         String address = object.getString("address");
 
 
-                        Food aFood = new Food(id, thumbnail, foodname, sales, rate, price, address);
+                        Food aFood = new Food(thumbnail, foodname, sales, rate, price, address);
 
                         foods_list.add(aFood);
                     }

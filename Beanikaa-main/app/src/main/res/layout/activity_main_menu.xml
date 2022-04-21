@@ -51,13 +51,14 @@
             />
 
         <ImageView
+            android:id="@+id/profile_btn"
+
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/avata"
             android:layout_marginTop="35dp"
             android:layout_marginLeft="15dp"
 
-            android:id="@+id/demoClick"
             android:clickable="true"
             />
     </LinearLayout>
