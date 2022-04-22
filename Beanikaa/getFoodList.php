@@ -11,7 +11,6 @@ $FoodListPHP = array();
 while($stmt ->fetch()){
 
     $temp = array();
-	
 	$temp['img'] = $thumbail;
 	$temp['foodName'] = $foodname;
 	$temp['foodRating'] = $foodrating;

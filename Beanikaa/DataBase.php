@@ -71,19 +71,31 @@ class DataBase
         } else return false;
     }
 
-    function order($email,$foodID,$number,$note,$customerID,$telephone,$address){
-        $email = $this->prepareData($email);
+    function addCart($foodID,$number,$customerID){
+      //  $email = $this->prepareData($email);
 		$foodID = $this->prepareData($foodID);
 		$number = $this->prepareData($number);
-		$note = $this->prepareData($note);
+		//$note = $this->prepareData($note);
 		$customerID = $this->prepareData($customerID);
-		$telephone = $this->prepareData($telephone);
-		$address = $this->prepareData($address);
+		//$telephone = $this->prepareData($telephone);
+		//$address = $this->prepareData($address);
 
-        $this->sql = "INSERT INTO `order`( `idUserName`, `idfoodNew`, `soluong`, `address`, `phoneNumber`, `Note`, `status`) VALUES ('".$customerID."','".$foodIDva."','".$number."','".$address."','".$phonenumber."','".$note."',1)";
+        $this->sql = "INSERT INTO `order`(`idUserName`, `idfoodNew`, `soluong`, `address`, `phoneNumber`, `Note`, `status`) VALUES ('".$customerID."','".$foodID."','".$number."','','','',0)";
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
         } else return false;
+    }
+
+    function order($idOrder,$telephone,$address,$note){
+        $this->sql = "UPDATE `order` set address ='".$address."', phoneNumber = '".$telephone."',Note = '".$note."',status = 1 where idOrder =".(int) $idOrder;
+        if (mysqli_query($this->connect, $this->sql)) {
+            return true;
+        } else return false;
+    }
+
+    function search($key){
+        $this->sql = "SELECT * FROM `foodnews` WHERE foodName='".$key."'";
+        
     }
 
 
