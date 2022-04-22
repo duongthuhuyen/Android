@@ -79,6 +79,7 @@
             android:layout_height="25dp"
             android:src="@drawable/search"
             android:layout_margin="5dp"
+            android:clickable="true"
             />
 
         <EditText
@@ -86,6 +87,8 @@
             android:layout_width="400dp"
             android:layout_height="40dp"
             android:hint="Looking for restaurant or dishes ..."
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             />
     </LinearLayout>
 

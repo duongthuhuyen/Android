@@ -2,9 +2,9 @@
 
 include('DataBase.php');
 
-$stmt = $conn->prepare("SELECT thumbnail, foodName, vote, price, sale, address FROM foodnews");
+$stmt = $conn->prepare("SELECT id, thumbnail, foodName, vote, price, sale, address FROM foodnews");
 $stmt ->execute();
-$stmt -> bind_result($thumbnail, $foodname, $foodrating, $price, $sales, $address);
+$stmt -> bind_result($id, $thumbnail, $foodname, $foodrating, $price, $sales, $address);
 
 $FoodListPHP = array();
 
@@ -12,7 +12,7 @@ while($stmt ->fetch()){
 
     $temp = array();
 	
-	// $temp['id'] = $id
+	$temp['id'] = $id;
 	$temp['img'] = $thumbnail;
 	$temp['foodName'] = $foodname;
 	$temp['foodRating'] = $foodrating;

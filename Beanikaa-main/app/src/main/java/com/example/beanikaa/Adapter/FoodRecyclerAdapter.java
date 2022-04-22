@@ -37,7 +37,6 @@ public class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapte
 
         public MyViewHolder (View view){
             super(view);
-
             mThumbnail = view.findViewById(R.id.aFood_thumbnail);
             mName = view.findViewById(R.id.aFood_name);
             mRate = view.findViewById(R.id.aFood_rate);
@@ -67,7 +66,7 @@ public class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapte
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, Main_second.class);
 
-//                intent.putExtra("id", aFood.getId());
+                intent.putExtra("id", aFood.getId());
                 intent.putExtra("thumbnail", aFood.getThumbnail());
                 intent.putExtra("name", aFood.getfoodname());
                 intent.putExtra("address", aFood.getAddress());

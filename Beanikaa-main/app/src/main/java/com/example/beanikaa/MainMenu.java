@@ -6,12 +6,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -22,9 +26,12 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.beanikaa.Adapter.FoodRecyclerAdapter;
+import com.example.beanikaa.Adapter.RecyclerAdapter;
 import com.example.beanikaa.Adapter.ViewPagerAdapter;
 import com.example.beanikaa.Model.Food;
+import com.example.beanikaa.Model.Orders;
 import com.example.beanikaa.common.Account;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,7 +48,7 @@ public class MainMenu extends AppCompatActivity {
     private List<Food> foods_list;
     private static final String BASE_URL = Account.link + "getFoodList.php";
 
-    private EditText nameField;
+    private EditText searchField;
     private ImageView searchBtn;
 
     public String fName;
@@ -62,9 +69,8 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        nameField = findViewById(R.id.searchEt);
+        searchField = findViewById(R.id.searchEt);
         searchBtn = findViewById(R.id.searchBtn);
-        fName = nameField.getText().toString();
 
         Rice_btn = findViewById(R.id.rice_category);
         Noodles_btn = findViewById(R.id.noodles_category);
@@ -100,8 +106,17 @@ public class MainMenu extends AppCompatActivity {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                call API search
-                searchAPI(fName);
+                recyclerView.setAdapter(null);
+                foods_list.clear();
+                searchFunction();
+            }
+        });
+        searchField.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    searchBtn.performClick();
+                }
+                return false;
             }
         });
 
@@ -150,39 +165,6 @@ public class MainMenu extends AppCompatActivity {
         });
     }
 
-//    insert code searchAPI here
-    private void searchAPI(String name) {
-        RequestQueue requestQueue = Volley.newRequestQueue(MainMenu.this);
-        String url = "http://192.168.0.100/androidapi/product/getProduct/0";
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-                        JSONObject jsonObject = response.getJSONObject(i);
-                        String thumbnel = jsonObject.getString("thumbnal");
-                        String address = jsonObject.getString("address");
-                        double star = jsonObject.getInt("vote");
-                        double price = jsonObject.getDouble("price");
-                        System.out.println(thumbnel);
-//                        homeItemModelArrayList.add(new HomeItemModel(thumbnel, address, star, Double.toString(price)));
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-                //  Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                System.out.println("erro " + error.toString());
-                Toast.makeText(MainMenu.this, "erro" + error.toString(), Toast.LENGTH_LONG).show();
-            }
-        });
-        requestQueue.add(jsonArrayRequest);
-    }
-
 
     private void getFoods(String category_url){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, category_url, new Response.Listener<String>() {
@@ -195,7 +177,7 @@ public class MainMenu extends AppCompatActivity {
                     for (int i = 0; i<=jsonArray.length(); i++){
                         JSONObject object = jsonArray.getJSONObject(i);
 
-//                        String id = object.getString("id");
+                        int id = object.getInt("id");
                         String thumbnail = object.getString("img");
                         String foodname = object.getString("foodName");
 
@@ -208,7 +190,7 @@ public class MainMenu extends AppCompatActivity {
                         String address = object.getString("address");
 
 
-                        Food aFood = new Food(thumbnail, foodname, sales, rate, price, address);
+                        Food aFood = new Food(id, thumbnail, foodname, sales, rate, price, address);
 
                         foods_list.add(aFood);
                     }
@@ -223,9 +205,53 @@ public class MainMenu extends AppCompatActivity {
                 Toast.makeText(MainMenu.this, error.toString(), Toast.LENGTH_LONG).show();
             }
         });
-
         Volley.newRequestQueue(MainMenu.this).add(stringRequest);
 
     }
 
+    private void searchFunction() {
+        String[] field = new String[1];
+        field[0] = "foodname";
+
+        String[] data = new String[1];
+        data[0] = String.valueOf(searchField.getText());
+//        data[0] = "Mi";
+
+        String searchUrl = Account.link + "searchMain.php";
+
+        PutData putData = new PutData(searchUrl, "POST", field, data);
+        if (putData.startPut()) {
+            if (putData.onComplete()) {
+                String result = putData.getResult();
+
+                try {
+                    JSONArray jsonArray = new JSONArray(result);
+                    for (int i = 0; i <= jsonArray.length(); i++) {
+                        JSONObject object = jsonArray.getJSONObject(i);
+
+                        int id = object.getInt("id");
+                        String thumbnail = object.getString("img");
+                        String foodname = object.getString("foodName");
+
+                        double rating = object.getDouble("foodRating");
+                        String str_rate = String.valueOf(rating);
+                        float rate = Float.valueOf(str_rate);
+
+                        int sales = object.getInt("sales");
+                        double price = object.getDouble("price");
+                        String address = object.getString("address");
+
+                        Food aFood = new Food(id, thumbnail, foodname, sales, rate, price, address);
+
+                        foods_list.add(aFood);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                mAdapter = new FoodRecyclerAdapter(MainMenu.this, foods_list);
+                recyclerView.setAdapter(mAdapter);
+            }
+        }
+    }
 }
