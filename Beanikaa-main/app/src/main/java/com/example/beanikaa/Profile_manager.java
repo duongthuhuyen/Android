@@ -36,6 +36,7 @@ public class Profile_manager extends AppCompatActivity {
                 SharedPreferences user_account_info = getSharedPreferences("Login", MODE_PRIVATE);
                 SharedPreferences.Editor Ed = user_account_info.edit();
                 Ed.putBoolean("isLoggedin", false);
+                Ed.commit();
                 Intent intent = new Intent(getApplicationContext(), LoginScreen.class);
                 startActivity(intent);
             }
