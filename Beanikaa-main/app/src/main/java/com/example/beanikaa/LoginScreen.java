@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,6 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.beanikaa.Adapter.FoodRecyclerAdapter;
 import com.example.beanikaa.Model.Food;
+import com.example.beanikaa.Model.UserAccount;
 import com.example.beanikaa.Service.SendMail;
 import com.example.beanikaa.common.Account;
 import com.example.beanikaa.data.Pojo.User;
@@ -67,6 +69,11 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
+        SharedPreferences user_account_info = getSharedPreferences("Login", MODE_PRIVATE);
+        SharedPreferences.Editor Ed = user_account_info.edit();
+
+        isLoggedIn();
 
 
         loginbtn = findViewById(R.id.LoginBtn);
@@ -138,16 +145,36 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = putData.getResult();
-                                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
                                 if(result!= null){
                                     progressBar.setVisibility(View.GONE);
-                                    Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show();
                                 }else{
                                     Toast.makeText(getApplicationContext(),"nothing",Toast.LENGTH_SHORT).show();
                                 }
 
                                 if(result.contains("Login Success!")){
                                     progressBar.setVisibility(View.GONE);
+
+                                    String account_result = result.replace("Login Success!", "");
+                                    try {
+                                        JSONObject account_jsonObj = new JSONObject(account_result.toString());
+                                        String str_id = account_jsonObj.getString("id");
+                                        int m_id = Integer.parseInt(str_id);
+                                        String m_email = account_jsonObj.getString("email");
+                                        String m_phone = account_jsonObj.getString("phonenumber");
+
+                                        Toast.makeText(getApplicationContext(),m_email, Toast.LENGTH_LONG).show();
+
+                                        Ed.putInt("id", m_id );
+                                        Ed.putString("email", m_email);
+                                        Ed.putString("phone", m_phone);
+                                        Ed.putBoolean("isLoggedin", true);
+                                        Ed.commit();
+
+                                    } catch (JSONException e) {
+                                        Log.d("Error", e.toString());
+                                    }
+
+
                                     Intent intent = new Intent(getApplicationContext(), MainMenu.class);
                                     startActivity(intent);
                                     finish();
@@ -240,43 +267,13 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
         }
     }
 
-
-    private void getAccount_info(String login_result_url){
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, login_result_url, new Response.Listener<String>() {
-
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONArray jsonArray = new JSONArray(response);
-
-                    for (int i = 0; i<=jsonArray.length(); i++){
-                        JSONObject object = jsonArray.getJSONObject(i);
-
-                        String thumbnail = object.getString("img");
-                        String foodname = object.getString("foodName");
-
-                        double rating = object.getDouble("foodRating");
-                        String str_rate = String.valueOf(rating);
-                        float rate = Float.valueOf(str_rate);
-
-                        int sales = object.getInt("sales");
-                        double price = object.getDouble("price");
-                        String address = object.getString("address");
-
-
-                        Food aFood = new Food(thumbnail, foodname, sales, rate, price, address);
-                    }
-                } catch (JSONException e) {}
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LoginScreen.this, error.toString(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        Volley.newRequestQueue(LoginScreen.this).add(stringRequest);
-
-    }
+    private void isLoggedIn(){
+        SharedPreferences sp1 = this.getSharedPreferences("Login", MODE_PRIVATE);
+        if (sp1.getBoolean("isLoggedin", false)){
+            Intent intent = new Intent(getApplicationContext(), MainMenu.class);
+            startActivity(intent);
+            finish();
+        }
+    };
 
 }

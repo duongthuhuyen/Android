@@ -6,7 +6,8 @@ public class Food {
     private double price;
     private float rating;
 
-    public Food(String thumbnail, String foodname, int sales, float rating, double price, String address){
+    public Food( String thumbnail, String foodname, int sales, float rating, double price, String address){
+//        this.id = id;
         this.thumbnail = thumbnail;
         this.foodname = foodname;
         this.sales = sales;
@@ -14,6 +15,14 @@ public class Food {
         this.price = price;
         this.address = address;
     }
+
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
     public String getfoodname() {
         return foodname;

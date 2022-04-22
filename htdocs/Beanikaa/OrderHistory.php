@@ -1,9 +1,11 @@
 <?php
 
 include('DataBase.php');
-$db = new DataBase();
 
-$stmt01 = $conn->prepare("SELECT idfoodNew, soluong FROM orders WHERE idUserName = 1");
+$user_id = $_POST['id'];
+$id = (int)$user_id;
+
+$stmt01 = $conn->prepare("SELECT idfoodNew, soluong FROM orders WHERE idUserName = ".$id);
 $stmt01 ->execute();
 $stmt01 -> bind_result($idfood, $amount);
 
