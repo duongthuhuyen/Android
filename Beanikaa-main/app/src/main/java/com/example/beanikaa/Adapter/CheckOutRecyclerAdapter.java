@@ -72,22 +72,22 @@ public class CheckOutRecyclerAdapter extends RecyclerView.Adapter<CheckOutRecycl
         holder.mName.setText(product.getFoodname());
 //        Glide.with(mContext).load(product.getThumbnail()).into(holder.mImageView);
 
-        holder.mContainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-//                Intent intent = new Intent(mContext, DetailedProductsActivity.class);
+//        holder.mContainer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
 //
-//                intent.putExtra("name",product.getName());
-//                intent.putExtra("image",product.getThumbnail());
-//                intent.putExtra("rate",product.getRating());
-//                intent.putExtra("amount", product.getAmount());
-//                intent.putExtra("price",product.getPrice());
+////                Intent intent = new Intent(mContext, DetailedProductsActivity.class);
+////
+////                intent.putExtra("name",product.getName());
+////                intent.putExtra("image",product.getThumbnail());
+////                intent.putExtra("rate",product.getRating());
+////                intent.putExtra("amount", product.getAmount());
+////                intent.putExtra("price",product.getPrice());
+////
+////                mContext.startActivity(intent);
 //
-//                mContext.startActivity(intent);
-
-            }
-        });
+//            }
+//        });
     }
 
     @Override
