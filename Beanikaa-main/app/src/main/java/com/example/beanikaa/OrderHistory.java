@@ -67,8 +67,9 @@ public class OrderHistory extends AppCompatActivity {
                         double rating = object.getDouble("rating");
                         String str_rate = String.valueOf(rating);
                         float rate = Float.valueOf(str_rate);
+                        int status = object.getInt("status");
 
-                        Orders order = new Orders(thumbnail, name, price, amount, rate);
+                        Orders order = new Orders(thumbnail, name, price, amount, rate, status);
 
                         ordersList.add(order);
 
