@@ -84,7 +84,7 @@ public class Main_second extends AppCompatActivity {
         gioHangImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent123 = new Intent(Main_second.this, OrderHistory.class);
+                Intent intent123 = new Intent(Main_second.this, CheckOut.class);
                 startActivity(intent123);
             }
         });
