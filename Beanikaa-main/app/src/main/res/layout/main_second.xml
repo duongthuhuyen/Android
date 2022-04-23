@@ -95,11 +95,12 @@
             />
 
         <ImageView
-            android:id="@+id/gioHangImg"
+            android:id="@+id/showcart_btn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/gio_hang"
             android:layout_marginLeft="325dp"
+            android:clickable="true"
             />
     </LinearLayout>
 
@@ -261,7 +262,7 @@
             />
 
         <Button
-            android:id="@+id/cartBtn"
+            android:id="@+id/addcartBtn"
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:text="Add to cart"

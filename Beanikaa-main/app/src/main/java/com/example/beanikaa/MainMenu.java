@@ -215,7 +215,6 @@ public class MainMenu extends AppCompatActivity {
 
         String[] data = new String[1];
         data[0] = String.valueOf(searchField.getText());
-//        data[0] = "Mi";
 
         String searchUrl = Account.link + "searchMain.php";
 

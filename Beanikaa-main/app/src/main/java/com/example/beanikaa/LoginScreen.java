@@ -162,8 +162,6 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
                                         String m_email = account_jsonObj.getString("email");
                                         String m_phone = account_jsonObj.getString("phonenumber");
 
-                                        Toast.makeText(getApplicationContext(),m_email, Toast.LENGTH_LONG).show();
-
                                         Ed.putInt("id", m_id );
                                         Ed.putString("email", m_email);
                                         Ed.putString("phone", m_phone);

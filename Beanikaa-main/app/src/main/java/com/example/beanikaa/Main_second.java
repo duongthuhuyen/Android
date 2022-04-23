@@ -1,20 +1,28 @@
 package com.example.beanikaa;
 
+import com.example.beanikaa.common.Account;
 import com.example.beanikaa.result.Second_screen;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.beanikaa.api.Api;
 import com.example.beanikaa.result.Second_screen;
 import com.squareup.picasso.Picasso;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -39,13 +47,11 @@ public class Main_second extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         intent = getIntent();
+        int foodID = (int) intent.getIntExtra("id", 0);
         String foodName = (String) intent.getStringExtra("name");
         String foodAddress = (String) intent.getStringExtra("address");
         float foodRating = (float) intent.getFloatExtra("rating", 2);
         double foodPrice = (double) intent.getDoubleExtra("price", 2d);
-//        int price = Integer.parseInt(foodPrice);
-//        String foodRating = (String) intent.getStringExtra("rating");
-//        int foodPrice = (int) intent.getIntExtra("price", -1);
         String foodImage = (String) intent.getStringExtra("thumbnail");
 
         super.onCreate(savedInstanceState);
@@ -53,11 +59,11 @@ public class Main_second extends AppCompatActivity {
 
         congBtn = findViewById(R.id.congBtn);
         truBtn = findViewById(R.id.truBtn);
-        cartBtn = findViewById(R.id.cartBtn);
+        cartBtn = findViewById(R.id.addcartBtn);
         amountTv = findViewById(R.id.amountTv);
         billTv = findViewById(R.id.billTv);
         heartImg = findViewById(R.id.heartImg);
-        gioHangImg = findViewById(R.id.gioHangImg);
+        gioHangImg = findViewById(R.id.showcart_btn);
         soLuong = Integer.parseInt(amountTv.getText().toString());
 
         fName = findViewById(R.id.FoodNameTv);
@@ -105,9 +111,6 @@ public class Main_second extends AppCompatActivity {
                 amountTv.setText(String.valueOf(soLuong));
                 tongTien = foodPrice * soLuong;
                 billTv.setText(String.valueOf(tongTien) + "đ");
-//=======
-//                billTv.setText(String.valueOf(tongTien) + ".000đ");
-//>>>>>>> 7cdf83cfe8ee3ddddd1aa9c690519e3bd61b59ef
             }
         });
 
@@ -127,34 +130,42 @@ public class Main_second extends AppCompatActivity {
         cartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                foodIDstr = ......
-//                soLuongStr = amountTv.getText().toString();
-                callApiAdd2Cart(foodIDstr, soLuongStr);
+                String[] field = new String[3];
+                field[0] = "foodID";
+                field[1] = "customerID";
+                field[2] = "number";
+
+                String[] data = new String[3];
+                data[0] = String.valueOf(foodID);
+                SharedPreferences sp1 = getSharedPreferences("Login", MODE_PRIVATE);
+                data[1] = String.valueOf(sp1.getInt("id", 0));
+                data[2] = String.valueOf(soLuong);
+
+                PutData putData = new PutData(Account.link + "addToCart.php", "POST", field, data);
+
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        String result = putData.getResult();
+                        if(result.contains("Add to cart Success")){
+                            Toast.makeText(Main_second.this, "Đã thêm vào giỏ hàng", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
             }
         });
 
-    }
-
-    private void callApiAdd2Cart(String foodIDstr, String soLuongStr) {
-        RequestBody requestBodyFoodID = RequestBody.create(MediaType.parse("multipart/form-data"), foodIDstr);
-        RequestBody requestBodyAmount = RequestBody.create(MediaType.parse("multipart/form-data"), soLuongStr);
-
-        Api.apiAdd2Cart.add2cart(requestBodyFoodID, requestBodyAmount).enqueue(new Callback<Second_screen>() {
+        gioHangImg.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<Second_screen> call, Response<Second_screen> response) {
-                Second_screen result = response.body();
-                if (result.getResult() == "sussesfull") {
-                    Toast.makeText(Main_second.this, "Đã thêm vào giỏ hàng", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(Main_second.this, "Lỗi 1. Vui lòng thử lại", Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Second_screen> call, Throwable t) {
-                Toast.makeText(Main_second.this, "Lỗi mạng. Vui lòng thử lại", Toast.LENGTH_LONG).show();
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CheckOut.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
+
+
 }
