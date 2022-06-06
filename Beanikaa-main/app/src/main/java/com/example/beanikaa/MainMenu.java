@@ -1,6 +1,7 @@
 package com.example.beanikaa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -55,7 +56,7 @@ public class MainMenu extends AppCompatActivity {
 
     ImageButton Rice_btn, Noodles_btn, Fastfood_btn, Drinks_btn;
     String category_url;
-    ImageView profile_img;
+    ImageView profile_img, refresh_btn;
 
 //    Banner
     ViewPager mViewPager;
@@ -78,9 +79,11 @@ public class MainMenu extends AppCompatActivity {
         Drinks_btn = findViewById(R.id.drinks_category);
 
         profile_img = findViewById(R.id.profile_btn);
+        refresh_btn = findViewById(R.id.refresh_btn);
 
         recyclerView = findViewById(R.id.food_recyclerView);
-        manager = new LinearLayoutManager(MainMenu.this, LinearLayoutManager.HORIZONTAL, false);
+//        manager = new LinearLayoutManager(MainMenu.this, LinearLayoutManager.VERTICAL, false);
+        manager = new GridLayoutManager(MainMenu.this, 2);
         recyclerView.setLayoutManager(manager);
         foods_list = new ArrayList<>();
 
@@ -117,6 +120,16 @@ public class MainMenu extends AppCompatActivity {
                     searchBtn.performClick();
                 }
                 return false;
+            }
+        });
+
+        refresh_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recyclerView.setAdapter(null);
+                foods_list.clear();
+                category_url = Account.link + "getFoodList.php";
+                getFoods(category_url);
             }
         });
 
